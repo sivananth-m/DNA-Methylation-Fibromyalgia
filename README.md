@@ -25,11 +25,6 @@ Alterations were found in **DGKE** (Diacylglycerol Kinase Epsilon), a regulator 
 ### 4. Functional Enrichment Analysis
 To validate the biological relevance of the methylation changes, I performed Gene Ontology (GO) and KEGG pathway analysis using DAVID.
 
-**Top Enriched Pathways:**
-The analysis confirmed a convergence on **neural development** and **connective tissue** maintenance.
-
-![Pathway Enrichment Plot](results/DAVID_Pathway_Plot.png)
-
 ---
 
 ## Visualizations
@@ -46,6 +41,11 @@ Shows the distribution of significant methylation signals across all chromosomes
 ### 3. TNXB Methylation Levels
 Detailed view of the specific probe located in the `TNXB` gene, showing distinct methylation differences between Fibromyalgia and Control groups.
 ![TNXB Boxplot](results/TNXB_Box_Plot.png)
+
+### 4.**Top Enriched Pathways:**
+The analysis confirmed a convergence on **neural development** and **connective tissue** maintenance.
+
+![Pathway Enrichment Plot](results/DAVID_Pathway_Plot.png)
 
 ---
 
