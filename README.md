@@ -28,7 +28,7 @@ Alterations were found in **DGKE** (Diacylglycerol Kinase Epsilon), a regulator 
 
 ### 1. Volcano Plot: Global Methylation Changes
 This plot visualizes the 18,611 differentially methylated probes (DMPs).
-![Volcano Plot](results/Volcano_plot.png)
+![Volcano Plot](results/Volcano_Plot.png)
 *(Note: Red dots indicate significant probes with Adj. P-Value < 0.05)*
 
 ### 2. Manhattan Plot: Genome-Wide Distribution
@@ -37,7 +37,7 @@ Shows the distribution of significant methylation signals across all chromosomes
 
 ### 3. TNXB Methylation Levels
 Detailed view of the specific probe located in the `TNXB` gene, showing distinct methylation differences between Fibromyalgia and Control groups.
-![TNXB Boxplot](results/TNXB_Boxplot.png)
+![TNXB Boxplot](results/TNXB_Box_Plot.png)
 
 ---
 
