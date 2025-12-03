@@ -22,6 +22,14 @@ Alterations were found in **DGKE** (Diacylglycerol Kinase Epsilon), a regulator 
 * **Significance:** `DGKE` controls the **Phosphatidylinositol signaling system**, which regulates intracellular calcium.
 * **Insight:** Disruption of this pathway can lower the activation threshold of sensory neurons, contributing to the "Central Sensitization" hallmark of Fibromyalgia.
 
+### 4. Functional Enrichment Analysis
+To validate the biological relevance of the methylation changes, I performed Gene Ontology (GO) and KEGG pathway analysis using DAVID.
+
+**Top Enriched Pathways:**
+The analysis confirmed a convergence on **neural development** and **connective tissue** maintenance.
+
+![Pathway Enrichment Plot](results/DAVID_Pathway_Plot.png)
+
 ---
 
 ## Visualizations
