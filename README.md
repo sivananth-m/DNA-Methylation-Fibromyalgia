@@ -28,7 +28,7 @@ Alterations were found in **DGKE** (Diacylglycerol Kinase Epsilon), a regulator 
 
 ### 1. Volcano Plot: Global Methylation Changes
 This plot visualizes the 18,611 differentially methylated probes (DMPs).
-![Volcano Plot](results/volcano_plot.png)
+![Volcano Plot](results/Volcano_plot.png)
 *(Note: Red dots indicate significant probes with Adj. P-Value < 0.05)*
 
 ### 2. Manhattan Plot: Genome-Wide Distribution
