@@ -1,86 +1,77 @@
-# Epigenetic Signatures of Fibromyalgia: A ChAMP Methylation Pipeline Analysis
+# Epigenetic Architectures of Chronic Pain: A Multi-Pipeline Methylation Analysis of Fibromyalgia
 
-## Project Overview
-Fibromyalgia is a chronic pain condition characterized by widespread musculoskeletal pain, fatigue, and cognitive difficulties. Despite its prevalence, the molecular mechanisms driving the disease remain poorly understood.
+![R](https://img.shields.io/badge/R-4.3.0-blue.svg)
+![Pipeline](https://img.shields.io/badge/Pipeline-ChAMP%20%7C%20Minfi-orange.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
-This project analyzes **genome-wide DNA methylation patterns** (Illumina 450k array) in Fibromyalgia patients vs. healthy controls to identify epigenetic biomarkers. Using the **ChAMP pipeline** in R, I identified significant differential methylation in genes linked to **connective tissue integrity** and **neural plasticity**, providing molecular insights into the pathology of central sensitization.
+## 📌 Executive Summary
+Fibromyalgia is a debilitating chronic pain disorder with an elusive etiology. This project challenges the "functional" nature of the disease by uncovering **robust epigenetic alterations** in the structural and neurological machinery of patients.
 
-## Key Biological Findings
-
-### 1. Connective Tissue Pathology (TNXB)
-I identified significant differential methylation in the **Tenascin XB (TNXB)** gene.
-* **Significance:** Mutations in `TNXB` are the known cause of **Ehlers-Danlos Syndrome (EDS)**.
-* **Insight:** Given the high clinical comorbidity between Fibromyalgia and Hypermobility, epigenetic silencing of `TNXB` suggests a novel mechanism where acquired connective tissue defects contribute to the chronic pain phenotype.
-
-### 2. Maladaptive Neuroplasticity (PCDH Cluster)
-Gene Set Enrichment Analysis (GSEA) revealed a massive clustering of methylation changes in the **Protocadherin Alpha (PCDHA)** gene cluster on Chromosome 5q31.
-* **Significance:** Protocadherins are critical for neural circuit formation and synaptic specificity.
-* **Insight:** Combined with the enrichment of neurodevelopmental transcription factors (**SOX2**, **PAX6**), this points to "maladaptive plasticity"—suggesting that pain processing pathways in these patients may be actively "rewiring" or reverting to a hypersensitive state.
-
-### 3. Metabolic Hyperexcitability (DGKE)
-Alterations were found in **DGKE** (Diacylglycerol Kinase Epsilon), a regulator of lipid signaling.
-* **Significance:** `DGKE` controls the **Phosphatidylinositol signaling system**, which regulates intracellular calcium.
-* **Insight:** Disruption of this pathway can lower the activation threshold of sensory neurons, contributing to the "Central Sensitization" hallmark of Fibromyalgia.
-
-### 4. Functional Enrichment Analysis
-To validate the biological relevance of the methylation changes, I performed Gene Ontology (GO) and KEGG pathway analysis using DAVID.
+Using a rigorous **Multi-Pipeline Consensus Approach (ChAMP + Minfi)** on Illumina 450k array data, I identified **43 high-confidence consensus genes** that withstood strict cross-validation. The findings propose a novel **"Dual-Hit Pathology"**:
+1.  **Structural Fragility:** Epigenetic silencing of *TNXB* (Ehlers-Danlos gene) and *AGRN*.
+2.  **Synaptic Rewiring:** Maladaptive plasticity driven by *NRXN1* and the *PCDH* cluster.
 
 ---
 
-## Visualizations
+## 🚀 The "Consensus" Methodology
+Unlike standard analyses that rely on a single algorithm, I implemented a **comparative benchmarking strategy** to eliminate false positives.
 
-### 1. Volcano Plot: Global Methylation Changes
-This plot visualizes the 18,611 differentially methylated probes (DMPs).
-![Volcano Plot](results/Volcano_Plot.png)
-*(Note: Red dots indicate significant probes with Adj. P-Value < 0.05)*
+| Pipeline Step | Tool Used | Purpose | Outcome |
+| :--- | :--- | :--- | :--- |
+| **Exploration** | **ChAMP** | Broad signal detection (Linear Regression) | Identified ~18,000 DMPs (High Sensitivity) |
+| **Validation** | **Minfi** | Regional clustering (Bump Hunting) | Identified 120 DMRs (High Specificity) |
+| **Consensus** | **Custom R** | **Intersection Analysis** | **43 Robust Biomarkers** (Genes found by BOTH methods) |
 
-### 2. Manhattan Plot: Genome-Wide Distribution
-Shows the distribution of significant methylation signals across all chromosomes.
-![Manhattan Plot](results/manhattan_plot.png)
-
-### 3. TNXB Methylation Levels
-Detailed view of the specific probe located in the `TNXB` gene, showing distinct methylation differences between Fibromyalgia and Control groups.
-![TNXB Boxplot](results/TNXB_Box_Plot.png)
-
-### 4.**Top Enriched Pathways:**
-The analysis confirmed a convergence on **neural development** and **connective tissue** maintenance.
-
-![Pathway Enrichment Plot](results/DAVID_Pathway_Plot.png)
+> *By filtering the broad ChAMP signal through the strict Minfi regional filter, I isolated the "true biological signal" from technical noise.*
 
 ---
 
-## Methods & Workflow
+## 🔬 Key Biological Discoveries
 
-### Tools Used
-* **R Version:** 4.0+
-* **Bioinformatics Packages:** `ChAMP`, `minfi`, `limma`, `DMRcate`
-* **Databases:** Gene Ontology (GO), KEGG, STRING-db
+### 1. The "Synaptic Velcro" Defect
+Functional network analysis (STRING-db) of the 43 consensus genes revealed a distinct cluster of **Synaptic Adhesion Molecules**.
+* **The Genes:** `NRXN1` (Neurexin-1), `CTNNA2` (Catenin), `PCDHA7` (Protocadherin).
+* **The Insight:** These proteins physically hold the pre- and post-synaptic neurons together. Their epigenetic disruption suggests **"Maladaptive Synaptic Plasticity"**—the neurons are physically rewiring themselves to maintain a hypersensitive pain state.
 
-### Analysis Pipeline
-1.  **Data Loading:** Parsed IDAT files using `minfi` and `ChAMP`.
-2.  **Quality Control (QC):**
-    * Filtered probes with detection p-value > 0.01.
-    * Removed SNP-related probes and sex-chromosome probes to avoid bias.
-3.  **Normalization:** Applied **BMIQ** (Beta Mixture Quantile Normalization) to correct for Type-I and Type-II probe bias.
-4.  **DMP Analysis:** Identified Differentially Methylated Probes using linear regression models (`limma`).
-5.  **DMR Analysis:** Identified Differentially Methylated Regions (clusters of probes) using the **Bumphunter** algorithm.
-6.  **Functional Enrichment:** Performed GSEA and GO analysis to interpret biological significance.
+### 2. The "Ehlers-Danlos" Connection
+I identified significant hypermethylation in **Tenascin XB (`TNXB`)**.
+* **Clinical Relevance:** Mutations in *TNXB* cause Ehlers-Danlos Syndrome (EDS).
+* **The Insight:** This provides a molecular link explaining the high comorbidity between Fibromyalgia and Joint Hypermobility. The patient's extracellular matrix (ECM) may be structurally compromised.
+
+### 3. Epigenetic Feedback Loops
+The consensus list included **`HDAC4`** (Histone Deacetylase 4) and **`YTHDC1`** (RNA Methylation Reader).
+* **The Insight:** The disease signature includes the very machinery that controls gene expression, suggesting a self-perpetuating **"Epigenetic Trap"** that prevents recovery.
 
 ---
 
-## Repository Structure
-```text
-Fibromyalgia_Methylation/
-│
-├── README.md               # Project overview and findings
-├── scripts/
-│   ├── 01_ChAMP_Pipeline.R # Full R code for QC, Normalization, and DMP/DMR calling
-│   └── 02_Plotting.R       # Code for generating Volcano, Manhattan, and Box plots
-├── results/
-│   ├── volcano_plot.png    # Visual output
-│   ├── manhattan_plot.png  # Visual output
-│   ├── TNXB_Boxplot.png    # Visual output
-│   ├── DMP_Results.csv     # List of significant single probes
-│   └── DMR_Results.csv     # List of significant regions
-└── data/
-    └── SampleSheet.csv     # Metadata for the samples
+## 📊 Visualizations
+
+### A. The Consensus Strategy
+The Venn diagram demonstrates the strict filtering process. Only genes validated by both the Probe-Level (ChAMP) and Region-Level (Minfi) analysis were selected.
+![Venn Diagram](results/figures/Venn_Consensus_Genes.png)
+
+### B. Protein-Protein Interaction (PPI) Network
+The 43 consensus genes form tight functional modules regulating **Synaptic Structure** (Red) and **RNA Processing** (Green).
+![PPI Network](results/figures/PPI_Network_Consensus.png)
+
+### C. Target Validation: TNXB
+Methylation levels of *TNXB*, showing clear separation between Fibromyalgia and Control samples.
+![TNXB Boxplot](results/figures/TNXB_Boxplot.png)
+
+---
+
+## 🛠️ Tech Stack & Skills Demonstrated
+* **Genomic Data Science:** `ChAMP`, `minfi`, `GenomicRanges`, `limma`.
+* **Statistical Rigor:** False Discovery Rate (FDR) correction, SVD Batch Effect Correction, Consensus Calling.
+* **Network Biology:** PPI analysis (STRING), Functional Enrichment (DAVID/KEGG).
+* **Visualization:** `ggplot2`, `VennDiagram`, `ComplexHeatmap`.
+
+---
+
+## 📬 Contact
+**Sivananth M.**
+*Bioinformatics Analyst & Epigenetics Enthusiast*
+* [LinkedIn](https://www.linkedin.com/in/sivananth-m)
+* [Email](mailto:sivananthm2002@gmail.com)
+
+> *"I believe that the future of precision medicine lies in distinguishing signal from noise. This project is my demonstration of that belief."*
