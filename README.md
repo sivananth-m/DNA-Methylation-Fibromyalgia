@@ -4,7 +4,7 @@
 ![Pipeline](https://img.shields.io/badge/Pipeline-ChAMP%20%7C%20Minfi-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
-## 📌 Executive Summary
+## Summary
 Fibromyalgia is a debilitating chronic pain disorder with an elusive etiology. This project challenges the "functional" nature of the disease by uncovering **robust epigenetic alterations** in the structural and neurological machinery of patients.
 
 Using a rigorous **Multi-Pipeline Consensus Approach (ChAMP + Minfi)** on Illumina 450k array data, I identified **43 high-confidence consensus genes** that withstood strict cross-validation. The findings propose a novel **"Dual-Hit Pathology"**:
@@ -13,7 +13,7 @@ Using a rigorous **Multi-Pipeline Consensus Approach (ChAMP + Minfi)** on Illumi
 
 ---
 
-## 🚀 The "Consensus" Methodology
+## The "Consensus" Methodology
 Unlike standard analyses that rely on a single algorithm, I implemented a **comparative benchmarking strategy** to eliminate false positives.
 
 | Pipeline Step | Tool Used | Purpose | Outcome |
@@ -26,7 +26,7 @@ Unlike standard analyses that rely on a single algorithm, I implemented a **comp
 
 ---
 
-## 🔬 Key Biological Discoveries
+## Key Biological Discoveries
 
 ### 1. The "Synaptic Velcro" Defect
 Functional network analysis (STRING-db) of the 43 consensus genes revealed a distinct cluster of **Synaptic Adhesion Molecules**.
@@ -44,7 +44,7 @@ The consensus list included **`HDAC4`** (Histone Deacetylase 4) and **`YTHDC1`**
 
 ---
 
-## 📊 Visualizations
+## Visualizations
 
 ### A. The Consensus Strategy
 The Venn diagram demonstrates the strict filtering process. Only genes validated by both the Probe-Level (ChAMP) and Region-Level (Minfi) analysis were selected.
@@ -60,7 +60,7 @@ Methylation levels of *TNXB*, showing clear separation between Fibromyalgia and 
 
 ---
 
-## 🛠️ Tech Stack & Skills Demonstrated
+## Tech Stack & Skills Demonstrated
 * **Genomic Data Science:** `ChAMP`, `minfi`, `GenomicRanges`, `limma`.
 * **Statistical Rigor:** False Discovery Rate (FDR) correction, SVD Batch Effect Correction, Consensus Calling.
 * **Network Biology:** PPI analysis (STRING), Functional Enrichment (DAVID/KEGG).
@@ -68,7 +68,7 @@ Methylation levels of *TNXB*, showing clear separation between Fibromyalgia and 
 
 ---
 
-## 📬 Contact
+## Contact
 **Sivananth M.**
 *Bioinformatics Analyst & Epigenetics Enthusiast*
 * [LinkedIn](https://www.linkedin.com/in/sivananth-m)
