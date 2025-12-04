@@ -48,15 +48,15 @@ The consensus list included **`HDAC4`** (Histone Deacetylase 4) and **`YTHDC1`**
 
 ### A. The Consensus Strategy
 The Venn diagram demonstrates the strict filtering process. Only genes validated by both the Probe-Level (ChAMP) and Region-Level (Minfi) analysis were selected.
-![Venn Diagram](results/figures/Venn_Consensus_Genes.png)
+![Venn Diagram](results/Venn_Consensus_Genes.png)
 
 ### B. Protein-Protein Interaction (PPI) Network
 The 43 consensus genes form tight functional modules regulating **Synaptic Structure** (Red) and **RNA Processing** (Green).
-![PPI Network](results/figures/PPI_Network_Consensus.png)
+![PPI Network](results/PPI_Network_Consensus.png)
 
 ### C. Target Validation: TNXB
 Methylation levels of *TNXB*, showing clear separation between Fibromyalgia and Control samples.
-![TNXB Boxplot](results/figures/TNXB_Boxplot.png)
+![TNXB Boxplot](results/TNXB_Boxplot.png)
 
 ---
 
